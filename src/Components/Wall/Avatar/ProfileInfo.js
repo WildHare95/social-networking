@@ -17,7 +17,6 @@ const ProfileInfo = (props) => {
             </span>
             <div>
                 <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
-                Status:
                 {props.profile.lookingForAJobDescription}
             </div>
         </div>
