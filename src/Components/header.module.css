@@ -1,0 +1,10 @@
+.head_logo{
+  grid-area: hl;
+  background-color:  green;
+}
+
+.head_logo img{
+  width: 60px;
+}
+
+

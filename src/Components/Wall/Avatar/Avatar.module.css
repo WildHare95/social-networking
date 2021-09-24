@@ -1,0 +1,17 @@
+.conteiner{
+    display: grid;
+    grid-template-columns: 1fr 1fr  ;
+    grid-template-rows: 1fr;
+
+
+}
+.conteiner img{
+    padding: 20px;
+    border-radius: 100px;
+    width: 150px;
+}
+
+.text{
+    align-self: center;
+    justify-self: start;
+}

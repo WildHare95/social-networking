@@ -1,0 +1,14 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 1fr;
+    background-color: chocolate;
+}
+
+.messages{
+    align-self: center;
+}
+
+.dialogs{
+    align-self: center;
+}
