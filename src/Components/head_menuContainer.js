@@ -1,7 +1,7 @@
 import React from "react";
 import HeadMenu from "./head_menu";
 import {connect} from "react-redux";
-import {getUserData, logout} from "../React/auth-reducer";
+import {getUserData, logout} from "../redux/auth-reducer";
 
 
 class HeadMenuContainer extends React.Component {

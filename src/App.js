@@ -13,7 +13,7 @@ import {connect} from "react-redux";
 import React from "react";
 import {withRouter} from "react-router";
 import {compose} from "redux";
-import {initializedApp} from "./React/App-reducer";
+import {initializedApp} from "./redux/App-reducer";
 import Preloader from "./Components/common/Preloader";
 
 class App extends React.Component {
