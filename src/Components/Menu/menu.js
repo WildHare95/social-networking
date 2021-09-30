@@ -1,13 +1,7 @@
 import p from './menu.module.css';
 import {NavLink} from "react-router-dom";
-import Friends from "./sidebarFriends";
 
 const Menu = (props) => {
-
-
-
-    //let imgElements = props.img.map(i => <Friends img={i.img}/>)
-
     return (
         <div className={p.menu}>
             <div className={p.container}>
@@ -27,15 +21,6 @@ const Menu = (props) => {
                                                      activeClassName={p.active}>Users</NavLink>
                     </div>
                 </div>
-               {/* <div>
-                    <div className={p.someFriends}>FRIENDS
-                        <div className={p.hr}></div>
-                        <div className={p.FriendStand}>
-                            {imgElements}
-                        </div>
-                    </div>
-                </div>*/}
-
             </div>
         </div>
 

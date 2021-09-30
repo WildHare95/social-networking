@@ -1,0 +1,31 @@
+.paginator{
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+}
+.pageNumber{
+    text-align: center;
+    width: 30px;
+    high: 30px;
+    color: royalblue;
+    padding: 5px;
+    border: 2px solid midnightblue;
+}
+
+.pageNumber.selectedPage{
+    color: midnightblue;
+    font-weight: bold;
+    border-color: midnightblue;
+}
+.button{
+    margin-top: 5px;
+    background-color: mediumblue;
+    border: none;
+    width: 70px;
+    height: 25px;
+    font-size: 10px;
+    border-radius: 30px;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+}

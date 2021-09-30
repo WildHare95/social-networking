@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 10fr;
     grid-template-rows: 1fr;
-    background-color: chocolate;
+    background-color: #00FA9A;
 }
 
 .messages{

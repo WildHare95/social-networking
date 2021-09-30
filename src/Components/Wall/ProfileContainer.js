@@ -9,9 +9,6 @@ class ProfileContainer extends React.Component {
         return (
             <div className='wall'>
                 <UserProfileContainer/>
-
-
-                <div>disc</div>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React from "react";
 import Users from "./Users";
-import Preloader from "../common/Preloader";
+import Preloader from "../common/Preloader/Preloader";
 
 
 class UsersAPIComponent extends React.Component {
@@ -17,6 +17,7 @@ class UsersAPIComponent extends React.Component {
     render() {
         return (
             <>
+
                 {this.props.isFetching ? <Preloader/> : null}
 
                 <Users

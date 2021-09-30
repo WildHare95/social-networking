@@ -1,11 +1,40 @@
-.conteiner{
-
+.conteiner {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
 
 }
 
+.textarea{
+    resize: none;
+    font-size: 14px;
+    overflow: auto;
+    outline: none;
+    padding: 8px;
+}
+.post{
+    display: flex;
+    align-items: center;
+}
+
 .conteiner img{
-    padding: 25px;
+    padding: 15px;
     border-radius: 70px;
     width: 85px;
+}
+
+.likes{
+    display: flex;
+    align-items: center;
+}
+
+.button{
+    background-color: royalblue ;
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
 }
 

@@ -25,7 +25,7 @@ const dialogReducer = (state = initialState, action) =>{
             let body = action.newMessageBody
             return  {
                 ...state,
-                messageData: [...state.messageData,{id: 7, mes: body} ]
+                messageData: [...state.messageData,{id: 7, mes: body}]
             }
         }
         default:

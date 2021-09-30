@@ -14,7 +14,7 @@ import React from "react";
 import {withRouter} from "react-router";
 import {compose} from "redux";
 import {initializedApp} from "./redux/App-reducer";
-import Preloader from "./Components/common/Preloader";
+import Preloader from "./Components/common/Preloader/Preloader";
 
 class App extends React.Component {
     componentDidMount() {

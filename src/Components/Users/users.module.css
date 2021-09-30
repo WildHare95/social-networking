@@ -7,3 +7,35 @@
     font-weight: bold;
     font-size: large;
 }
+
+.container{
+
+    background-color: #00FA9A;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button{
+    background-color: black ;
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.button2{
+    background-color: red ;
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
