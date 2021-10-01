@@ -20,3 +20,30 @@
     align-items: center;
     text-align: left;
 }
+
+.my {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.label {
+    background: midnightblue;
+    width: 100px;
+    height: 35px;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font: 12px/30px Tahoma;
+    transition: all 0.18s ease-in-out;
+    border: 1px solid black;
+    color: white;
+}
+
+.label:hover {
+    color: lightblue;
+    background: black;
+}

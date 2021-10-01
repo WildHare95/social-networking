@@ -3,18 +3,19 @@ import {ProfileAPI, UserAPI} from "../Components/api/api";
 const ADD_POST = 'ADD-POST'
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
 const SET_USER_STATUS = 'SET_USER_STATUS'
+const SET_SAVE_PHOTO = 'SET_SAVE_PHOTO'
 
 let initialState = {
     postData: [
-    {id: 1, message: 'This post have sens', likesCount: '12'},
-    {id: 2, message: 'This post haven\'t sens', likesCount: '42'},
-    {id: 3, message: 'POST TEST', likesCount: '100'}
-],
+        {id: 1, message: 'This post have sens', likesCount: '12'},
+        {id: 2, message: 'This post haven\'t sens', likesCount: '42'},
+        {id: 3, message: 'POST TEST', likesCount: '100'}
+    ],
     profile: null,
     status: ""
 }
 
-const profileReducer = (state = initialState, action) =>{
+const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
             let newPost = {id: 4, message: action.newPostText, likesCount: '33'}
@@ -24,11 +25,16 @@ const profileReducer = (state = initialState, action) =>{
 
             }
         }
-        case SET_USER_PROFILE:{
+        case SET_USER_PROFILE: {
             return {...state, profile: action.profile}
         }
-        case  SET_USER_STATUS:{
+        case  SET_USER_STATUS: {
             return {...state, status: action.status}
+        }
+        case SET_SAVE_PHOTO: {
+            return {
+                ...state, profile: {...state.profile, photos: action.photoFile}
+            }
         }
 
         default:
@@ -38,25 +44,30 @@ const profileReducer = (state = initialState, action) =>{
 
 
 export const addPostActionCreator = (newPostText) => {
-    return{
+    return {
         type: ADD_POST, newPostText
     }
 }
 export const setUserStatusAC = (status) => {
-    return{
+    return {
         type: SET_USER_STATUS, status
     }
 }
 
 export const setUserProfileAC = (profile) => {
-    return{
+    return {
         type: SET_USER_PROFILE, profile
+    }
+}
+export const savePhotoSuccess = (photoFile) => {
+    return {
+        type: SET_USER_PROFILE, photoFile
     }
 }
 
 export const getUserProfile = (userId) => (dispatch) => {
-    return(
-       UserAPI.getProfile(userId)
+    return (
+        UserAPI.getProfile(userId)
             .then(response => {
                 dispatch(setUserProfileAC(response.data))
             })
@@ -64,7 +75,7 @@ export const getUserProfile = (userId) => (dispatch) => {
 }
 
 export const getUserStatus = (userId) => (dispatch) => {
-    return(
+    return (
         ProfileAPI.getStatus(userId)
             .then(response => {
                 dispatch(setUserStatusAC(response.data))
@@ -72,11 +83,21 @@ export const getUserStatus = (userId) => (dispatch) => {
     )
 }
 export const updateUserStatus = (status) => (dispatch) => {
-    return(
+    return (
         ProfileAPI.updateStatus(status)
             .then(response => {
-                if (response.data.resultCode === 0 ) {
+                if (response.data.resultCode === 0) {
                     dispatch(setUserStatusAC(status))
+                }
+            })
+    )
+}
+export const savePhoto = (file) => (dispatch) => {
+    return (
+        ProfileAPI.addPhoto(file)
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    dispatch(savePhotoSuccess(response.data.data.photos))
                 }
             })
     )

@@ -8,13 +8,20 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
+    const onMainPhotoSelected = (e) => {
+        if(e.target.files.length){
+            props.savePhoto(e.target.files[0])
+        }
+    }
+
 
     return (
         <div className={style.profile}>
             <div className={style.profile}>
                 {!props.profile.photos.large ? <img className={style.img} src={photo}/> :
                     <img src={props.profile.photos.large} alt=""/>}
-
+                {props.isOwner && <label className={style.label}> Selected Photo<input className={style.my} type="file" onChange={onMainPhotoSelected}/></label>
+                }
             </div>
             <div>
             <span>
