@@ -9,7 +9,7 @@ const HeadMenu = (props) => {
          <div className={style.text}>
              {props.isAuth
                  ? <div>{props.login} <button className={style.button} onClick={props.logout}>Logout</button></div>
-                 : <NavLink to={'/Components/login'}>Login</NavLink>
+                 : <NavLink to={'/login'}>Login</NavLink>
              }
          </div>
 
