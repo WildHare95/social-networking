@@ -11,7 +11,7 @@ const minLength = minLengthCreator(1)
 
 const LoginForm = (props) => {
     return (
-        <form className={style.container} onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit}>
             <div>
                 <Field component={Input} name={"email"} placeholder={"Email"} validate={[required, minLength]}/>
             </div>
@@ -19,7 +19,7 @@ const LoginForm = (props) => {
                 <Field component={Input} name={"password"} placeholder={"Password"} validate={[required, minLength]} type={'password'}/>
             </div>
             <div>
-                Remember Me<Field component={Input} name={"rememberMe"} type={"checkbox"}/>
+                <Field component={Input} name={"rememberMe"} type={"checkbox"}/> Remember Me
             </div>
                 {props.error &&  <div className={style.formSummaryError}>
                     {props.error}
@@ -27,7 +27,7 @@ const LoginForm = (props) => {
 
                 }
             <div>
-                <button className={style.button}>LogIn</button>
+                <button>LogIn</button>
             </div>
         </form>
     )
@@ -49,7 +49,7 @@ const Login = (props) => {
     }
 
     return (
-        <div className={style.container}>
+        <div>
             <h1>LOGIN</h1>
             <LoginReduxForm onSubmit={onSubmit}/>
         </div>
