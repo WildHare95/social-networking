@@ -10,7 +10,7 @@ import {compose} from "redux";
 
 class UserProfileContainer extends React.Component{
 
-    refreshProfile = () =>{
+    refreshData = () => {
         let userId = this.props.match.params.userId
         if (!userId)
         {
@@ -25,13 +25,13 @@ class UserProfileContainer extends React.Component{
     }
 
     componentDidMount() {
-        this.refreshProfile()
+        this.refreshData()
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.match.params.userId !== prevProps.match.params.userId)
         {
-            this.refreshProfile()
+            this.refreshData()
         }
     }
 
@@ -39,12 +39,7 @@ class UserProfileContainer extends React.Component{
 
         return(
 
-            <Profile {...this.props}
-                     isOwner = {!this.props.match.params.userId}
-                     profile={this.props.profile}
-                     status={this.props.status}
-                     updateUserStatus={this.props.updateUserStatus}
-                     savePhoto={this.props.savePhoto}/>
+            <Profile savePhoto={this.props.savePhoto} isOwner={!this.props.match.params.userId} {...this.props} profile={this.props.profile} status={this.props.status} updateUserStatus={this.props.updateUserStatus}/>
 
         )
     }
