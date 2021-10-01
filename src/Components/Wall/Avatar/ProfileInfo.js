@@ -20,7 +20,9 @@ const ProfileInfo = (props) => {
             <div className={style.profile}>
                 {!props.profile.photos.large ? <img className={style.img} src={photo}/> :
                     <img src={props.profile.photos.large} alt=""/>}
-                {props.isOwner && <label className={style.label}> Selected Photo<input className={style.my} type="file" onChange={onMainPhotoSelected}/></label>
+                {props.isOwner && <label className={style.label}>Selected Photo
+                    <input className={style.my} type="file" onChange={onMainPhotoSelected}/>
+                </label>
                 }
             </div>
             <div>
