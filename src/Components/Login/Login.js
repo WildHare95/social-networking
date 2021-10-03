@@ -28,6 +28,8 @@ const LoginForm = (props) => {
                 }
             <div>
                 <button className={style.button}>LogIn</button>
+                <div>test.test85558@gmail.com</div>
+                <div>1111</div>
             </div>
         </form>
     )
